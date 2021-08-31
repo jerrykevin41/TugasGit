@@ -1,0 +1,191 @@
+<html>
+<head>
+	<title>Pemesanan</title>
+</head>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About</title>
+	<style type="text/css">a {
+  text-decoration: none;
+}
+body {
+ background: grey;
+}
+
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: century gothic;
+}
+header{
+	background-color: white;
+	height: 6vh;
+	background-size: cover;
+	background-position: center;
+}
+ul{
+	float: left;
+	margin-top: 10px;
+
+}
+ul li{
+	display: inline-block;
+
+}
+ul li a{
+	text-decoration: none;
+	color: black;
+	padding: 5px;
+	border: 1px solid transparent;
+	margin-right: 5px;
+}
+
+
+#copyright {
+  color: black;
+  font-family: "Raleway", sans-serif;
+  font-size: 10pt;
+  margin-top: 150px;
+  text-align: left;
+  margin-left: 300px;
+}
+#sosial{
+  color: black;
+  font-family: "Raleway", sans-serif;
+  margin-left: 250px;
+  margin-top: 80px;
+  text-align: center;
+
+}
+#pesanan {
+	margin-top: 100px;
+	margin-left: 300px;
+	 font-family: "calibri", sans-serif;
+
+
+}
+</style>
+</head>
+
+
+	<header>
+	<div id="main">
+		<ul>
+				<li><a href="beranda.html"><b>Beranda</b></a></li>
+				<li><a href="pesanan.html"><b>Pemesanan</b></a></li>
+				<li><a href="about.html"><b>About</b></a></li>
+				<li><a href="loginn.html" onclick="return confirm('Apakah anda yakin ingin logout ?')"><b>Logout</b></a></a></li>
+		</ul>
+		</div>	
+		</header>
+<div id="pesanan">
+<script language="Javascript">
+	function hitungtotal() {
+		var nama = (document.fform.inama.value);
+		var harga = (document.fform.iharga.value);
+		var member = (document.fform.imember.value);
+		var jumlahpaket = (document.fform.ijumlahpaket.value);
+
+		var ht = 0.0;
+		var sub = 0.0;
+		var diskon = 0.0;
+		var total = 0.0;
+
+		if (harga=="cpu") {
+			ht = 5000000;
+		}
+
+		else if (harga=="Monitor") {
+			ht = 3000000;
+		}
+
+		else if (harga=="Keyboard") {
+			ht = 500000;
+		}
+		else if (harga=="RAM") {
+			ht = 500000;
+		}
+		else if (harga=="SSD") {
+			ht = 1500000;
+		}
+		else if (harga=="Hardisk") {
+			ht = 2000000;
+		}
+		else if (harga=="Mouse") {
+			ht = 300000;
+		}
+		else if (harga=="Komputer 1set") {
+			ht = 25000000;
+		}
+		sub = jumlahpaket*ht;
+
+		if (member=="normal") {
+			diskon=0.1*sub;
+		}
+		else{
+			diskon=0.5*sub;
+		}
+		total=sub-diskon;
+		document.fform.otiket.value=eval(ht);
+		document.fform.osub.value=eval(sub);
+		document.fform.odiskon.value=eval(diskon);
+		document.fform.ototal.value=eval(total);
+	}
+
+</script>
+<body>
+	<form name="fform" >
+		<table border="2" align="center" width="70%">
+			<tr>
+				<td width="100%" colspan="2"><h2 align="center">Pesanan Komputer</h2></td>
+			</tr>
+			<tr>
+				<td>
+					Nama : <input type="text" name="inama" autocomplete="on" required=""><br>
+					nama barang : <select name="iharga">
+						<option value="cpu">cpu</option>
+						<option value="Monitor">Monitor</option>
+						<option value="Keyboard">Keyboard</option>
+						<option value="RAM">Ram</option>
+						<option value="SSD">SSD</option>
+						<option value="Hardisk">Hardisk</option>
+						<option value="Mouse">mouse</option>
+						<option value="Komputer 1set">Komputer 1set</option>
+					</select><br>
+					Jumlah Barang <input type="text" name="ijumlahpaket"><br>
+					Member toko : <select name="imember" size="1">
+						<option value="normal">Tidak</option>
+						<option value="VIP">Ya</option>
+					</select><br>
+				</td>
+				<td>
+					Harga Barang : <input type="text" name="otiket" size="10"><br>
+					Sub Total : <input type="text" name="osub" size="10"><br>
+					Diskon : <input type="text" name="odiskon" size="10"><br>
+					Total Bayar :<input type="text" name="ototal" size="10"><br>
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="button" name="Hitung" value="Hitung"
+					onclick="hitungtotal()">
+					<input type="reset" name="Reset">
+				</td>
+			</tr>
+		</table>
+	</form>
+		<div id="sosial">
+<ul>
+				<li><a href="https://www.youtube.com/channel/UCo0E78o9_qSwaIqS9kHVeFQ"><img src="yt.png" width="50px"></a></img></li>
+				<li><a href="https://api.whatsapp.com/send?phone=6289621075720&text=Halo%20Orang%20Ganteng%20"><img src="wa.png" width="50px"></a></li>
+				<li><a href="https://www.facebook.com/althoofandi"><img src="fb.png" width="50px"></a></li>
+				<li><a href="https://www.instagram.com/muhammad_althoofandi/" ><img src="ig.png" width="50px"></a></li>
+		</ul>
+		</div>
+     <div id="copyright">
+  	<p>Website design by fandi gtg.</p>
+  </div>
+</body>
+</html> 
